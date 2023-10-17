@@ -1,33 +1,42 @@
+import Exercises.MyQueue;
+import Exercises.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        LinkedList myLinkedList = new LinkedList();
-        myLinkedList.append(1);
-        myLinkedList.append(2);
-        myLinkedList.append(3);
-        myLinkedList.append(4);
-        myLinkedList.append(5);
+        MyQueue queue = new MyQueue();
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        Integer front = queue.dequeue();
+        System.out.println(front);
 
-        myLinkedList.getHead();
-        myLinkedList.getTail();
-        myLinkedList.getLength();
+    }
 
-//        System.out.println(myLinkedList.findMiddleNode().getValue());
-//        System.out.println(myLinkedList.hasLoop());
-//        System.out.println(myLinkedList.findKthFromEnd(1).getValue());
-//        myLinkedList.remove(0);
-//
-//        myLinkedList.getHead();
-//        myLinkedList.getTail();
-//        myLinkedList.getLength();
+    private static String reverseString(String word) {
 
-        myLinkedList.reverseBetween(1, 3);
+        char[] wo = word.toCharArray();
+        String k = "";
+        for(int i = wo.length-1; i >= 0; i--) {
+            k+=wo[i];
+        }
 
-        System.out.println("\nLinked List:");
-        myLinkedList.printList();
+        return k;
+    }
 
+    public static boolean isBalancedParentheses(String parentheses) {
+        Stack<Character> stack = new Stack<>();
+        for (char p : parentheses.toCharArray()) {
+            if (p == '(') {
+                stack.push(p);
+            } else if (p == ')') {
+                if (stack.isEmpty() || stack.pop() != '(') {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
     }
 
 }
