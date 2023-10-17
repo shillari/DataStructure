@@ -2,13 +2,6 @@ import java.util.*;
 
 public class LinkedList {
 
-    // CREATE CLASS VARIABLES, NODE CLASS, AND CONSTRUCTOR HERE //
-    //                                                          //
-    //                                                          //
-    //                                                          //
-    //                                                          //
-    //////////////////////////////////////////////////////////////
-
     private Node head;
     private Node tail;
     private int length;
